@@ -1,0 +1,31 @@
+Projeto: Simulador de Jogo de Cartas Interativo
+Objetivo:
+O projeto consiste em um simulador de jogo de cartas em Python, focado em ilustrar a aplicação prática de conceitos de Estruturas de Dados (pilhas) e Algoritmos de Ordenação (Insertion Sort e QuickSort). 
+A simulação permite gerenciar jogadores, suas mãos de cartas e um ranking de pontuação, além de incluir uma mecânica simplificada de jogo tipo poker para determinar um vencedor.
+
+Estrutura do Projeto e Conceitos-Chave
+Classe Jogador (Programação Orientada a Objetos - POO):
+
+Representação da Mão: A mão de cada jogador é um atributo (self.mao) implementado como uma lista, que funciona como uma pilha (LIFO - Last-In, First-Out). 
+Isso é demonstrado pelos métodos adicionar_carta() (que usa append()) e retirar_carta() (que usa pop()), simulando como um jogador pega e joga a última carta adicionada à mão.
+
+Atributos: Cada objeto Jogador possui um nome e uma pontuacao.
+
+Algoritmos de Ordenação:
+
+insertion_sort(): Este algoritmo é utilizado para ordenar as cartas na mão de um jogador. Ele é ideal para essa tarefa, pois simula o processo intuitivo de uma pessoa organizando as cartas uma a uma.
+
+quicksort(): Este algoritmo é empregado para ordenar o ranking de jogadores com base na pontuação de forma decrescente. É um algoritmo eficiente e recursivo, ideal para ordenar grandes volumes de dados.
+
+Lógica do Jogo:
+
+avaliar_mao(): Esta é a função principal para a mecânica do jogo. Ela recebe uma mão de 3 cartas e a avalia, retornando um valor numérico que representa a força da mão (ex: trinca, par, carta alta).
+ A função retorna uma tupla com 3 elementos (tipo_de_mao, valor_principal, valor_secundario), o que permite uma comparação direta e correta entre as mãos.
+
+iniciar_rodada(): Esta função gerencia o fluxo de uma rodada completa. Ela cria e embaralha o baralho, distribui cartas, chama a função avaliar_mao() para todos os jogadores, determina o vencedor e atualiza a pontuação.
+
+Interface de Usuário (Menu Interativo):
+
+O código utiliza um loop principal (while True) com um menu de opções para interagir com o usuário.
+
+As funções de suporte (adicionar_jogador(), alterar_pontuacao(), etc.) são chamadas com base na escolha do usuário, garantindo uma experiência de uso fluida e intuitiva.
